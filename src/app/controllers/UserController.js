@@ -5,6 +5,9 @@ class UserController {
   async store(req, res) {
     try {
       const { email } = req.body;
+
+      if (!email) throw new Error('Email not provided!');
+
       const userExists = await User.findOne({ where: { email: email } });
       if (userExists) throw 'Usuário já cadastrado!';
 
