@@ -29,7 +29,7 @@ class User extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.File, { foreignKey: 'avatar_id' });
+    this.belongsTo(models.File, { foreignKey: 'avatar_id' });
   }
 
   async checkPassword(password) {

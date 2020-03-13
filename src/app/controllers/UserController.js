@@ -51,6 +51,7 @@ class UserController {
       if (!user) throw 'User not found!';
 
       const { email, oldpassword: oldPassword, password } = req.body;
+
       if (
         email &&
         email != user.email &&
