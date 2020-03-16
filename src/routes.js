@@ -2,6 +2,7 @@ import { Router } from 'express';
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FileController';
+import ProviderController from './app/controllers/ProviderController';
 
 import multer from 'multer';
 import multerConfig from '../src/config/MulterConfig';
@@ -26,5 +27,7 @@ routes.post(
 
 routes.post('/user', UserController.store);
 routes.put('/user', authMiddleware, UserController.update);
+
+routes.get('/providers', ProviderController.index);
 
 export default routes;
